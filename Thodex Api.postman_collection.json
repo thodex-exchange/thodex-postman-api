@@ -1,0 +1,839 @@
+{
+	"info": {
+		"_postman_id": "f4812d10-8abb-497c-9da0-d0b254bac7f4",
+		"name": "Thodex Api",
+		"description": "Thodex official supported Postman collections.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public - Server Time",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.thodex.com/v1/public/time",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"time"
+					]
+				},
+				"description": "Test connectivity to the Rest API and get the current server time."
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thodex.com/v1/public/time",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thodex",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"time"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Public - Markets Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.thodex.com/v1/public/markets",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"markets"
+					]
+				},
+				"description": "Trading rules and symbol information."
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thodex.com/v1/public/markets",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thodex",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"markets"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Public - Market Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.thodex.com/v1/public/market-status?market=BTCTRY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"market-status"
+					],
+					"query": [
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						}
+					]
+				},
+				"description": "Selected market price info"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thodex.com/v1/public/market-status",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thodex",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"market-status"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Public - Market Summary",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.thodex.com/v1/public/market-summary",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"market-summary"
+					]
+				},
+				"description": "Markets open order count and sum"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thodex.com/v1/public/market-status",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thodex",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"market-status"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Public - Market History",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.thodex.com/v1/public/market-history?market=BTCTRY&last_id=234567",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"market-history"
+					],
+					"query": [
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "market keyname (required)"
+						},
+						{
+							"key": "last_id",
+							"value": "234567",
+							"description": "last order id (optional)"
+						}
+					]
+				},
+				"description": "selected market order history"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.thodex.com/v1/public/market-status",
+							"protocol": "https",
+							"host": [
+								"api",
+								"thodex",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"market-status"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Public - Order Depth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/public/market-history?market=BTCTRY&limit=20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"public",
+						"market-history"
+					],
+					"query": [
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname"
+						},
+						{
+							"key": "limit",
+							"value": "20",
+							"description": "order depth limit"
+						}
+					]
+				},
+				"description": "Selected market open orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Get Balance",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b3139fe4-750d-4792-a9e3-e05c95eec7ff",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/account/balance?apikey={{apikey}}&tonce={{tonce}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"account",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						}
+					]
+				},
+				"description": "Get user all balances"
+			},
+			"response": []
+		},
+		{
+			"name": "Private - List Open Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/open-orders?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=5&limit=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"open-orders"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "offset",
+							"value": "5",
+							"description": "start point in open orders (optional)"
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"description": "list count (optional)"
+						}
+					]
+				},
+				"description": "Lists user open orders list in selected market"
+			},
+			"response": []
+		},
+		{
+			"name": "Private - List Order History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/open-orders?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=5&limit=2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"open-orders"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "offset",
+							"value": "5",
+							"description": "start point in order history (optional)"
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"description": "list count (optional)"
+						}
+					]
+				},
+				"description": "Lists user order history in selected market"
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Buy Limit Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9e07aebc-e185-41b5-a144-a227561d7e3f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/buy-limit?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&price=151250.5&amount=0.1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"buy-limit"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "price",
+							"value": "151250.5",
+							"description": "buy price (required)"
+						},
+						{
+							"key": "amount",
+							"value": "0.1",
+							"description": "buy amount (required)"
+						}
+					]
+				},
+				"description": "Make limit buy order "
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Sell Limit Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6228dc2c-208b-4e22-b04e-41f0af59d3d9",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/sell-limit?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&price=151250.5&amount=0.1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"sell-limit"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "price",
+							"value": "151250.5",
+							"description": "sell price (required)"
+						},
+						{
+							"key": "amount",
+							"value": "0.1",
+							"description": "sell amount (required)"
+						}
+					]
+				},
+				"description": "Make limit sell order "
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Buy Market Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "724dd046-6200-4cd8-9a6b-71b534125597",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/buy?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&amount=99000.5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"buy"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "amount",
+							"value": "99000.5",
+							"description": "buy amount in fiat (required)"
+						}
+					]
+				},
+				"description": "Make market buy order "
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Sell Market Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "06752b1e-9480-47e5-9604-e85cd024749b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/sell?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&amount=0.1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"sell"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "amount",
+							"value": "0.1",
+							"description": "sell amount in stock (required)"
+						}
+					]
+				},
+				"description": "Make market sell order "
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Cancel Order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "82dc9a12-f0c7-486d-94a6-6ae0f01455d2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/cancel?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&order_id=335641",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "order_id",
+							"value": "335641",
+							"description": "Id of order (required)"
+						}
+					]
+				},
+				"description": "Cancel the given order "
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "43fc464e-cda0-4836-ac88-8a192da2153d",
+				"type": "text/javascript",
+				"exec": [
+					"var CryptoJS = require(\"crypto-js\");",
+					"",
+					"const d = new Date();",
+					"const tonce = Math.round(d.getTime()/1000);",
+					"pm.environment.set('tonce', tonce);",
+					"var sigString = http_build_query({apikey: pm.variables.get('apikey') , tonce: tonce , secret: pm.variables.get('apisecret') });",
+					"var token = CryptoJS.SHA256(sigString);",
+					"pm.request.headers.upsert({key: 'Authorization', value: token.toString(CryptoJS.enc.Hex) });",
+					"",
+					"",
+					"function http_build_query(jsonObj) {",
+					"  const keys = Object.keys(jsonObj);",
+					"  const values = keys.map(key => jsonObj[key]);",
+					"  return keys",
+					"    .map((key, index) => {",
+					"      return `${key}=${values[index]}`;",
+					"    })",
+					"    .join(\"&\");",
+					"};"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7bc1ec70-9f04-4a0c-9799-05b2e7c22351",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0c10c613-67a6-4d87-a28e-ea3611ac2484",
+			"key": "apikey",
+			"value": ""
+		},
+		{
+			"id": "d1081b7c-5aa7-43f5-b5cd-1f1df469db36",
+			"key": "apisecret",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
