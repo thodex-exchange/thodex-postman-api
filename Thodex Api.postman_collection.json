@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f4812d10-8abb-497c-9da0-d0b254bac7f4",
+		"_postman_id": "39e3bfa1-e039-43c9-8c3a-725813716891",
 		"name": "Thodex Api",
 		"description": "Thodex official supported Postman collections.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -346,7 +346,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "b3139fe4-750d-4792-a9e3-e05c95eec7ff",
 						"exec": [
 							""
 						],
@@ -393,7 +392,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.thodex.com/v1/market/open-orders?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=5&limit=2",
+					"raw": "https://api.thodex.com/v1/market/open-orders?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=5&limit=50",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -428,7 +427,7 @@
 						},
 						{
 							"key": "limit",
-							"value": "2",
+							"value": "50",
 							"description": "list count (optional)"
 						}
 					]
@@ -493,7 +492,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "9e07aebc-e185-41b5-a144-a227561d7e3f",
 						"exec": [
 							""
 						],
@@ -555,7 +553,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6228dc2c-208b-4e22-b04e-41f0af59d3d9",
 						"exec": [
 							""
 						],
@@ -617,7 +614,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "724dd046-6200-4cd8-9a6b-71b534125597",
 						"exec": [
 							""
 						],
@@ -674,7 +670,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "06752b1e-9480-47e5-9604-e85cd024749b",
 						"exec": [
 							""
 						],
@@ -731,7 +726,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "82dc9a12-f0c7-486d-94a6-6ae0f01455d2",
 						"exec": [
 							""
 						],
@@ -787,35 +781,47 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "43fc464e-cda0-4836-ac88-8a192da2153d",
 				"type": "text/javascript",
 				"exec": [
 					"var CryptoJS = require(\"crypto-js\");",
-					"",
+					"const paramsString = request.url.split('?')[1];",
+					"const eachParamArray = paramsString.split('&');",
+					"let params = {};",
+					"eachParamArray.forEach((param) => {",
+					"    const key = param.split('=')[0];",
+					"    const value = param.split('=')[1];",
+					"    if(key!==\"apikey\"||key!==\"tonce\"){",
+					"           Object.assign(params, {[key]: value});",
+					"    } ",
+					"});",
 					"const d = new Date();",
 					"const tonce = Math.round(d.getTime()/1000);",
 					"pm.environment.set('tonce', tonce);",
-					"var sigString = http_build_query({apikey: pm.variables.get('apikey') , tonce: tonce , secret: pm.variables.get('apisecret') });",
+					"Object.assign(params, {[\"apikey\"]: pm.variables.get('apikey')});",
+					"Object.assign(params, {[\"tonce\"]:  tonce});",
+					"var sigString = http_build_query(params)+\"&secret=\"+pm.variables.get('apisecret');",
+					"console.log(sigString);",
 					"var token = CryptoJS.SHA256(sigString);",
 					"pm.request.headers.upsert({key: 'Authorization', value: token.toString(CryptoJS.enc.Hex) });",
 					"",
 					"",
 					"function http_build_query(jsonObj) {",
-					"  const keys = Object.keys(jsonObj);",
+					"  const keys = Object.keys(jsonObj).sort();",
 					"  const values = keys.map(key => jsonObj[key]);",
 					"  return keys",
 					"    .map((key, index) => {",
 					"      return `${key}=${values[index]}`;",
 					"    })",
 					"    .join(\"&\");",
-					"};"
+					"};",
+					"",
+					""
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "7bc1ec70-9f04-4a0c-9799-05b2e7c22351",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -825,15 +831,16 @@
 	],
 	"variable": [
 		{
-			"id": "0c10c613-67a6-4d87-a28e-ea3611ac2484",
 			"key": "apikey",
 			"value": ""
 		},
 		{
-			"id": "d1081b7c-5aa7-43f5-b5cd-1f1df469db36",
 			"key": "apisecret",
 			"value": ""
+		},
+		{
+			"key": "tonce",
+			"value": ""
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
