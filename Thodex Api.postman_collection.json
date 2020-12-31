@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "39e3bfa1-e039-43c9-8c3a-725813716891",
+		"_postman_id": "4e57ddf4-d95d-42db-8fee-14029f032843",
 		"name": "Thodex Api",
 		"description": "Thodex official supported Postman collections.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -392,7 +392,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.thodex.com/v1/market/open-orders?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=5&limit=50",
+					"raw": "https://api.thodex.com/v1/market/open-orders?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=0&limit=50",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -422,7 +422,7 @@
 						},
 						{
 							"key": "offset",
-							"value": "5",
+							"value": "0",
 							"description": "start point in open orders (optional)"
 						},
 						{
@@ -437,7 +437,142 @@
 			"response": []
 		},
 		{
+			"name": "Private - Open Order Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/open-orders-info?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&order_id=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"open-orders-info"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "order_id",
+							"value": "0",
+							"description": "Selected order id(required)"
+						}
+					]
+				},
+				"description": "Open order details for open orders"
+			},
+			"response": []
+		},
+		{
 			"name": "Private - List Order History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/order-finished?apikey={{apikey}}&tonce={{tonce}}&market=BTCTRY&offset=0&limit=50",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"order-finished"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "market",
+							"value": "BTCTRY",
+							"description": "Market keyname (required)"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "start point in open orders (optional)"
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"description": "list count (optional)"
+						}
+					]
+				},
+				"description": "Lists user order history list in selected market"
+			},
+			"response": []
+		},
+		{
+			"name": "Private - Order Finished Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thodex.com/v1/market/order-finished-info?apikey={{apikey}}&tonce={{tonce}}&order_id=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thodex",
+						"com"
+					],
+					"path": [
+						"v1",
+						"market",
+						"order-finished-info"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{apikey}}",
+							"description": "user api key (required)"
+						},
+						{
+							"key": "tonce",
+							"value": "{{tonce}}",
+							"description": "current timestamp (required)"
+						},
+						{
+							"key": "order_id",
+							"value": "0",
+							"description": "selected order id (required)"
+						}
+					]
+				},
+				"description": "Order details for order history "
+			},
+			"response": []
+		},
+		{
+			"name": "Private - List  Deal History",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -482,7 +617,7 @@
 						}
 					]
 				},
-				"description": "Lists user order history in selected market"
+				"description": "Lists user Deal history in selected market"
 			},
 			"response": []
 		},
@@ -789,10 +924,8 @@
 					"let params = {};",
 					"eachParamArray.forEach((param) => {",
 					"    const key = param.split('=')[0];",
-					"    const value = param.split('=')[1];",
-					"    if(key!==\"apikey\"||key!==\"tonce\"){",
-					"           Object.assign(params, {[key]: value});",
-					"    } ",
+					"    const value = param.split('=')[1];   ",
+					"    Object.assign(params, {[key]: value});",
 					"});",
 					"const d = new Date();",
 					"const tonce = Math.round(d.getTime()/1000);",
